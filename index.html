@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>House Points - Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #f5f5f8;
+      color: #222;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .site-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .admin-button {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .house-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .house-header {
+      position: relative;
+      height: 150px;
+    }
+
+    .house-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .house-name {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .house-body {
+      padding: 1rem 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    .totem-wrapper {
+      width: 70px;
+      height: 70px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid #eee;
+    }
+
+    .totem-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    footer {
+      padding: 1.5rem 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid #ddd;
+      background: #ffffff;
+    }
+
+    .school-logo {
+      max-width: 180px;
+      max-height: 80px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-title">House Points Dashboard</div>
+    <a href="admin.html" class="admin-button">Admin</a>
+  </header>
+
+  <main>
+    <section class="grid">
+
+      <!-- HOUSE 1 -->
+      <article class="house-card">
+        <div class="house-header">
+          <img src="PATH-TO-HOUSE1-PHOTO.jpg" alt="House 1 photo" />
+          <div class="house-name">House 1</div>
+        </div>
+        <div class="house-body">
+          <div class="totem-wrapper">
+            <img src="PATH-TO-HOUSE1-TOTEM.png" alt="House 1 totem">
+          </div>
+          <div class="points">Points: <span id="house1-points">0</span></div>
+          <div class="points-change" id="house1-change">+0 points today</div>
+        </div>
+      </article>
+
+      <!-- HOUSE 2 -->
+      <article class="house-card">
+        <div class="house-header">
+          <img src="PATH-TO-HOUSE2-PHOTO.jpg" alt="House 2 photo" />
+          <div class="house-name">House 2</div>
+        </div>
+        <div class="house-body">
+          <div class="totem-wrapper">
+            <img src="PATH-TO-HOUSE2-TOTEM.png" alt="House 2 totem">
+          </div>
+          <div class="points">Points: <span id="house2-points">0</span></div>
+          <div class="points-change" id="house2-change">+0 points today</div>
+        </div>
+      </article>
+
+      <!-- HOUSE 3 -->
+      <article class="house-card">
+        <div class="house-header">
+          <img src="PATH-TO-HOUSE3-PHOTO.jpg" alt="House 3 photo" />
+          <div class="house-name">House 3</div>
+        </div>
+        <div class="house-body">
+          <div class="totem-wrapper">
+            <img src="PATH-TO-HOUSE3-TOTEM.png" alt="House 3 totem">
+          </div>
+          <div class="points">Points: <span id="house3-points">0</span></div>
+          <div class="points-change" id="house3-change">+0 points today</div>
+        </div>
+      </article>
+
+      <!-- HOUSE 4 -->
+      <article class="house-card">
+        <div class="house-header">
+          <img src="PATH-TO-HOUSE4-PHOTO.jpg" alt="House 4 photo" />
+          <div class="house-name">House 4</div>
+        </div>
+        <div class="house-body">
+          <div class="totem-wrapper">
+            <img src="PATH-TO-HOUSE4-TOTEM.png" alt="House 4 totem">
+          </div>
+          <div class="points">Points: <span id="house4-points">0</span></div>
+          <div class="points-change" id="house4-change">+0 points today</div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <img src="PATH-TO-SCHOOL-LOGO.png" class="school-logo" alt="School logo" />
+  </footer>
+
+</body>
+</html>
